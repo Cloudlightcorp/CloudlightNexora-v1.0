@@ -63,7 +63,6 @@ header {
 .header-container {
     max-width: 1440px;
     margin: 0 auto;
-    /* padding: 0.8rem 1.5rem; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -125,24 +124,23 @@ header {
 .dropdown-trigger:hover {
     color: #2563eb;
 }
+
 .dropdown-menu li{
     border-bottom: 1px solid #edf2f7;
 }
+
 .dropdown-menu {
     position: absolute;
     top: calc(100% + 0.5rem);
     left: -1rem;
     background: #ffffff;
-    /* border-radius: 1rem; */
     box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.12);
     min-width: 200px;
-    /* padding: 0.6rem 0; */
     list-style: none;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
     transition: all 0.2s ease;
-    /* border: 1px solid #eef2f6; */
 }
 
 .dropdown:hover .dropdown-menu {
@@ -318,6 +316,107 @@ header {
     width: 100%;
 }
 
+/* ==================================
+   OFFERINGS SECTION
+================================== */
+.offerings-section {
+    max-width: 1280px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+}
+
+.offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.offering-card {
+    border-radius: 24px;
+    padding: 1.75rem;
+    transition: all .3s ease;
+}
+
+.offering-card:hover {
+    transform: translateY(-6px);
+}
+
+.products-card {
+    background: #f8eefa;
+}
+
+.nexuslabs-card {
+    background: #e8faf0;
+}
+
+.services-card {
+    background: #eaf4ff;
+}
+
+.training-card {
+    background: #f5ecff;
+}
+
+.offering-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.products-card .offering-icon {
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+}
+
+.nexuslabs-card .offering-icon {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.services-card .offering-icon {
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+}
+
+.training-card .offering-icon {
+    background: linear-gradient(135deg, #9333ea, #ec4899);
+}
+
+.offering-icon i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.offering-card h3 {
+    font-weight: 700;
+    color: #0A2B5E;
+    margin-bottom: 0.75rem;
+}
+
+.offering-card p {
+    color: #334155;
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+}
+
+.offering-link {
+    color: #0053ff;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: gap 0.2s;
+}
+
+.offering-link:hover {
+    gap: 0.6rem;
+    text-decoration: underline;
+}
+
 /* HERO SECTION */
 .hero-section {
     max-width: 1400px;
@@ -423,11 +522,85 @@ header {
 
 .slide {
     position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity .6s ease;
+}
+
+.slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0;
-    transition: opacity .6s ease;
+}
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(
+        90deg,
+        rgba(0,38,90,.85) 0%,
+        rgba(0,38,90,.45) 15%,
+        rgba(0,38,90,.05) 100%
+    );
+    color: #fff;
+}
+
+.slide-overlay h2 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.overlay-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.overlay-btn {
+    display: inline-block;
+    background: #fff;
+    color: #0053ff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    width: fit-content;
+}
+
+.overlay-stats {
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    display: flex;
+    justify-content: space-around;
+    background: rgba(255,255,255,.15);
+    backdrop-filter: blur(10px);
+    padding: 18px;
+    border-radius: 16px;
+}
+
+.overlay-stats div {
+    text-align: center;
+}
+
+.overlay-stats span {
+    display: block;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.overlay-stats small {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
 }
 
 .slide.active {
@@ -593,7 +766,6 @@ header {
     color: black;
     line-height: 1.65;
     margin-bottom: 1.25rem;
-    /* font-size: 0.9rem; */
 }
 
 .read-more {
@@ -709,10 +881,6 @@ header {
     transition: filter 0.3s ease;
 }
 
-.logo-item:hover .logo-img {
-    /* filter: brightness(0) saturate(100%) invert(27%) sepia(98%) saturate(1748%) hue-rotate(217deg) brightness(98%) contrast(101%); */
-}
-
 .logo-name {
     font-size: 0.7rem;
     font-weight: 500;
@@ -763,7 +931,6 @@ header {
 }
 
 .footer-col h4 {
-    /* font-size: 0.85rem; */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -784,7 +951,6 @@ header {
 .footer-col ul li a {
     color: black;
     text-decoration: none;
-    /* font-size: 0.85rem; */
     transition: all 0.2s ease;
     display: inline-block;
 }
@@ -833,7 +999,6 @@ header {
 }
 
 .footer-bottom p {
-    /* font-size: 0.75rem; */
     color: black;
     margin: 0;
     line-height: 1.5;
@@ -894,13 +1059,6 @@ header {
    Based on actual CSS viewport widths
    ============================================================ */
 
-/* 
-   BREAKPOINT STRATEGY:
-   - Above 834px: Desktop with full navigation
-   - 834px and below: Mobile hamburger menu
-   - Individual device optimizations within mobile range
-*/
-
 /* ==========================================
    iPAD PRO 12.9" (1024px) 
    ========================================== */
@@ -928,6 +1086,39 @@ header {
     
     .hero-content h1 {
         font-size: 2.6rem;
+    }
+    
+       .offerings-section {
+        padding: 0 1.5rem;
+        margin: 3.5rem auto;
+    }
+    
+    .offerings-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .offering-card {
+        padding: 1.5rem;
+        border-radius: 20px;
+    }
+    
+    .offering-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .offering-card p {
+        font-size: 0.82rem;
+    }
+    
+    .offering-icon {
+        width: 55px;
+        height: 55px;
+        border-radius: 14px;
+    }
+    
+    .offering-icon i {
+        font-size: 1.3rem;
     }
     
     .footer-grid {
@@ -973,6 +1164,40 @@ header {
         height: 420px;
     }
     
+        .offerings-section {
+        padding: 0 1.5rem;
+        margin: 3rem auto;
+    }
+    
+    .offerings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .offering-card {
+        padding: 1.5rem;
+        border-radius: 18px;
+    }
+    
+    .offering-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .offering-card p {
+        font-size: 0.85rem;
+    }
+    
+    .offering-icon {
+        width: 55px;
+        height: 55px;
+        border-radius: 14px;
+        margin-bottom: 1.25rem;
+    }
+    
+    .offering-icon i {
+        font-size: 1.3rem;
+    }
+    
     .who-we-are {
         margin: 4rem auto;
         padding: 0 1.5rem;
@@ -1006,11 +1231,45 @@ header {
 
 /* ==========================================
    iPAD MINI (768px) & GALAXY TAB S4 (712px)
-   Stack hero, keep 2-col VM grid
+   Stack hero, keep 2-col VM grid, 2-col offerings
    ========================================== */
 @media only screen and (max-width: 768px) {
     .logo img {
         width: 250px;
+    }
+    
+       .offerings-section {
+        padding: 0 1.5rem;
+        margin: 2.5rem auto;
+    }
+    
+    .offerings-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+    
+    .offering-card {
+        padding: 1.5rem;
+        border-radius: 18px;
+    }
+    
+    .offering-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .offering-card p {
+        font-size: 0.85rem;
+    }
+    
+    .offering-icon {
+        width: 54px;
+        height: 54px;
+        border-radius: 14px;
+        margin-bottom: 1.25rem;
+    }
+    
+    .offering-icon i {
+        font-size: 1.25rem;
     }
     
     .hero-section {
@@ -1098,7 +1357,7 @@ header {
 /* ==========================================
    iPHONE 14 PRO MAX (430px) & iPHONE 6/7/8 PLUS (414px)
    SAMSUNG GALAXY A51/71 (412px) & SAMSUNG GALAXY S20 ULTRA (412px)
-   Single column VM cards
+   Single column offerings & VM cards
    ========================================== */
 @media only screen and (max-width: 430px) {
     .announcement-text,
@@ -1116,6 +1375,46 @@ header {
     
     .logo img {
         width: 235px;
+    }
+    
+        .offerings-section {
+        padding: 0 1.25rem;
+        margin: 2.5rem auto;
+    }
+    
+    .offerings-grid {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+    }
+    
+    .offering-card {
+        padding: 1.4rem;
+        border-radius: 16px;
+    }
+    
+    .offering-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .offering-card p {
+        font-size: 0.85rem;
+        margin-bottom: 1.1rem;
+    }
+    
+    .offering-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 13px;
+        margin-bottom: 1.1rem;
+    }
+    
+    .offering-icon i {
+        font-size: 1.2rem;
+    }
+    
+    .offering-link {
+        font-size: 0.82rem;
     }
     
     .hero-section {
@@ -1147,6 +1446,33 @@ header {
     .hero-slider {
         height: 300px;
         border-radius: 16px;
+    }
+    
+    .slide-overlay {
+        padding: 25px;
+    }
+    
+    .slide-overlay h2 {
+        font-size: 28px;
+    }
+    
+    .overlay-subtitle {
+        font-size: 14px;
+    }
+    
+    .overlay-stats {
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        padding: 12px;
+    }
+    
+    .overlay-stats span {
+        font-size: 22px;
+    }
+    
+    .overlay-stats small {
+        font-size: 10px;
     }
     
     .slider-btn {
@@ -1372,6 +1698,44 @@ header {
         padding: 0.65rem 0;
     }
     
+       .offerings-section {
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+    
+    .offerings-grid {
+        gap: 1rem;
+    }
+    
+    .offering-card {
+        padding: 1.2rem;
+        border-radius: 14px;
+    }
+    
+    .offering-card h3 {
+        font-size: 1.15rem;
+    }
+    
+    .offering-card p {
+        font-size: 0.8rem;
+    }
+    
+    .offering-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 11px;
+        margin-bottom: 1rem;
+    }
+    
+    .offering-icon i {
+        font-size: 1.1rem;
+    }
+    
+    .offering-link {
+        font-size: 0.78rem;
+    }
+
+
     .hero-section {
         padding: 1.25rem 1rem;
         gap: 1.25rem;
@@ -1400,6 +1764,29 @@ header {
     .hero-slider {
         height: 250px;
         border-radius: 14px;
+    }
+    
+    .slide-overlay {
+        padding: 20px;
+    }
+    
+    .slide-overlay h2 {
+        font-size: 22px;
+    }
+    
+    .overlay-subtitle {
+        font-size: 12px;
+    }
+    
+    .overlay-stats {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        padding: 10px;
+    }
+    
+    .overlay-stats span {
+        font-size: 18px;
     }
     
     .slider-btn {
@@ -1616,7 +2003,47 @@ header {
         font-size: 0.85rem;
         padding: 0.55rem 0;
     }
+     .offerings-section {
+        padding: 0 0.85rem;
+        margin: 1.75rem auto;
+    }
     
+    .offerings-grid {
+        gap: 0.85rem;
+    }
+    
+    .offering-card {
+        padding: 1.1rem;
+        border-radius: 12px;
+    }
+    
+    .offering-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .offering-card p {
+        font-size: 0.75rem;
+        margin-bottom: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .offering-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        margin-bottom: 0.85rem;
+    }
+    
+    .offering-icon i {
+        font-size: 1rem;
+    }
+    
+    .offering-link {
+        font-size: 0.73rem;
+    }
+
+
     .hero-section {
         padding: 1rem 0.85rem;
         gap: 1rem;
@@ -1651,6 +2078,33 @@ header {
     .hero-slider {
         height: 220px;
         border-radius: 12px;
+    }
+    
+    .slide-overlay {
+        padding: 18px;
+    }
+    
+    .slide-overlay h2 {
+        font-size: 20px;
+    }
+    
+    .overlay-subtitle {
+        font-size: 11px;
+    }
+    
+    .overlay-stats {
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        padding: 8px;
+    }
+    
+    .overlay-stats span {
+        font-size: 16px;
+    }
+    
+    .overlay-stats small {
+        font-size: 9px;
     }
     
     .slider-btn {
@@ -1842,6 +2296,43 @@ header {
 @media only screen and (max-width: 834px) and (orientation: landscape) {
     .logo img {
         width: 130px;
+    }
+    .offerings-section {
+        padding: 0 1.25rem;
+    }
+    
+    .offerings-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.85rem;
+    }
+    
+    .offering-card {
+        padding: 1.1rem;
+        border-radius: 14px;
+    }
+    
+    .offering-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .offering-card p {
+        font-size: 0.73rem;
+        margin-bottom: 0.9rem;
+    }
+    
+    .offering-icon {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 0.85rem;
+    }
+    
+    .offering-icon i {
+        font-size: 1.1rem;
+    }
+    
+    .offering-link {
+        font-size: 0.73rem;
     }
     
     .hero-section {
