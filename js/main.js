@@ -113,7 +113,7 @@ function prevSlide() {
 
 function startSlideShow() {
     stopSlideShow();
-    slideInterval = setInterval(nextSlide, 5000);
+    slideInterval = setInterval(nextSlide, 3000);
 }
 
 function stopSlideShow() {
