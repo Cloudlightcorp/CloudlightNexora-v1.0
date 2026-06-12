@@ -550,6 +550,7 @@ header {
 }
 
 .slide-overlay h2 {
+    margin-left: 15px;
     font-size: 42px;
     font-weight: 800;
     line-height: 1.1;
@@ -557,6 +558,7 @@ header {
 }
 
 .overlay-subtitle {
+    margin-left: 20px;
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -582,7 +584,7 @@ header {
     display: flex;
     justify-content: space-around;
     background: rgba(255,255,255,.15);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(2px);
     padding: 18px;
     border-radius: 16px;
 }
